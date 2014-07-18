@@ -53,6 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Daemon.cs" />
+    <Compile Include="DataEntity\UserEntities\Account.cs" />
+    <Compile Include="UserAgent\Actions\Action.cs" />
+    <Compile Include="UserAgent\Operations\Operations.cs" />
+    <Compile Include="UserAgent\UserAgent.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,7 +101,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserAgent\" />
+    <Folder Include="DataEntity\NetworkEntities\" />
+    <Folder Include="DataEntity\ShipEntities\" />
+    <Folder Include="Master\BaseMaster\" />
+    <Folder Include="Master\NetworkMaster\" />
+    <Folder Include="Master\ShipMaster\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
