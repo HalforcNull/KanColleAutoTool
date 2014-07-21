@@ -54,10 +54,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Daemon.cs" />
-    <Compile Include="DataEntity\UserEntities\Account.cs" />
-    <Compile Include="UserAgent\Actions\Action.cs" />
-    <Compile Include="UserAgent\Operations\Operations.cs" />
-    <Compile Include="UserAgent\UserAgent.cs" />
+    <Compile Include="DataEntities\NetworkEntities\NetworkEntity.cs" />
+    <Compile Include="DataEntities\NetworkEntities\RequestPostData.cs" />
+    <Compile Include="DataEntities\NetworkEntities\RequestResponseData.cs" />
+    <Compile Include="DataEntities\UIEntities\ClientUI.cs" />
+    <Compile Include="DataEntities\UserEntities\Account.cs" />
+    <Compile Include="GlobalValues.cs" />
+    <Compile Include="Masters\LogMaster.cs" />
+    <Compile Include="Masters\NetworkMaster.cs" />
+    <Compile Include="Masters\NetworkMasterComponent\HttpPoster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\NetworkMasterComponent\ResponseTranslator.cs" />
+    <Compile Include="Masters\UIMaster.cs" />
+    <Compile Include="UserAgents\Actions\Action.cs" />
+    <Compile Include="UserAgents\Operations\Operations.cs" />
+    <Compile Include="UserAgents\UserAgent.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,14 +78,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataEntity\DataEntity.cs" />
+    <Compile Include="DataEntities\DataEntity.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Master\Master.cs" />
+    <Compile Include="Masters\Master.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,11 +113,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataEntity\NetworkEntities\" />
-    <Folder Include="DataEntity\ShipEntities\" />
-    <Folder Include="Master\BaseMaster\" />
-    <Folder Include="Master\NetworkMaster\" />
-    <Folder Include="Master\ShipMaster\" />
+    <Folder Include="DataEntities\NetworkEntities\api_get_member\" />
+    <Folder Include="DataEntities\ShipEntities\" />
+    <Folder Include="Masters\BaseMasterComponent\" />
+    <Folder Include="Masters\ShipMasterComponent\" />
+    <Folder Include="Masters\UIMasterComponent\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

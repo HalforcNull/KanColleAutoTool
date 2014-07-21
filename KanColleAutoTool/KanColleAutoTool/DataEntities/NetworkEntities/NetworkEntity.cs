@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KanColleAutoTool.DataEntity.UserEntities
+namespace KanColleAutoTool.DataEntities.NetworkEntities
 {
-    class Account
+    class NetworkEntity:DataEntity
     {
-        public string Name { get; set; }
-        
     }
 }

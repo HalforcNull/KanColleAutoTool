@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KanColleAutoTool.Master
+namespace KanColleAutoTool.Masters
 {
-    class Master
+    public class UIMaster:Master
     {
+        public enum ClientUI { }
     }
 }

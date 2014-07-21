@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KanColleAutoTool.UserAgent.Actions
+namespace KanColleAutoTool.Masters.NetworkMasterComponent
 {
-    public static class Action
+    class ResponseTranslator
     {
-        public string ActionName { get; protected set; }
+
     }
 }

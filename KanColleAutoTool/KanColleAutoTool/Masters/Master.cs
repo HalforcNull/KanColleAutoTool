@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KanColleAutoTool.DataEntity
+namespace KanColleAutoTool.Masters
 {
-    class DataEntity
+    class Master
     {
-
     }
 }
