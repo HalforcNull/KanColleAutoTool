@@ -54,9 +54,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Daemon.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Basic.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Charge.cs" />
+    <Compile Include="DataEntities\NetworkEntities\KDock.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Material.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Ndock.cs" />
     <Compile Include="DataEntities\NetworkEntities\NetworkEntity.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Port.cs" />
+    <Compile Include="DataEntities\NetworkEntities\QuestList.cs" />
     <Compile Include="DataEntities\NetworkEntities\RequestPostData.cs" />
     <Compile Include="DataEntities\NetworkEntities\RequestResponseData.cs" />
+    <Compile Include="DataEntities\NetworkEntities\SlotitemMember.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Start2.cs" />
     <Compile Include="DataEntities\UIEntities\ClientUI.cs" />
     <Compile Include="DataEntities\UserEntities\Account.cs" />
     <Compile Include="GlobalValues.cs" />
