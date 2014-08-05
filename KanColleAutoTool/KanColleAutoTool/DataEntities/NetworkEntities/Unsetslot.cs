@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KanColleAutoTool
+namespace KanColleAutoTool.DataEntities.NetworkEntities
 {
-    class GlobalValues
+    class Unsetslot
     {
     }
 }

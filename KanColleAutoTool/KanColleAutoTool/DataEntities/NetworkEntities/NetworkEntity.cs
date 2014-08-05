@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KanColleAutoTool.UserAgents;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,11 @@ namespace KanColleAutoTool.DataEntities.NetworkEntities
         START2,
         SLOTITEM_MEMBER
     }
-    class NetworkEntity:DataEntity
+    public abstract class NetworkEntity:DataEntity
     {
+        abstract public string getRequestUri(UserAgent user));
+        abstract public object getResponseDataObject();
+        abstract public bool loadData(string response);
+
     }
 }

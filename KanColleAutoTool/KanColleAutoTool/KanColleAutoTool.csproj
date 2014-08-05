@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -56,6 +60,8 @@
     <Compile Include="Daemon.cs" />
     <Compile Include="DataEntities\NetworkEntities\Basic.cs" />
     <Compile Include="DataEntities\NetworkEntities\Charge.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Furniture.cs" />
+    <Compile Include="DataEntities\NetworkEntities\GetIncentive.cs" />
     <Compile Include="DataEntities\NetworkEntities\KDock.cs" />
     <Compile Include="DataEntities\NetworkEntities\Material.cs" />
     <Compile Include="DataEntities\NetworkEntities\Ndock.cs" />
@@ -64,8 +70,12 @@
     <Compile Include="DataEntities\NetworkEntities\QuestList.cs" />
     <Compile Include="DataEntities\NetworkEntities\RequestPostData.cs" />
     <Compile Include="DataEntities\NetworkEntities\RequestResponseData.cs" />
+    <Compile Include="DataEntities\NetworkEntities\SlotItem.cs" />
     <Compile Include="DataEntities\NetworkEntities\SlotitemMember.cs" />
     <Compile Include="DataEntities\NetworkEntities\Start2.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Unsetslot.cs" />
+    <Compile Include="DataEntities\NetworkEntities\Useritem.cs" />
+    <Compile Include="DataEntities\ShipEntities\Ship.cs" />
     <Compile Include="DataEntities\UIEntities\ClientUI.cs" />
     <Compile Include="DataEntities\UserEntities\Account.cs" />
     <Compile Include="GlobalValues.cs" />
@@ -74,9 +84,10 @@
     <Compile Include="Masters\NetworkMasterComponent\HttpPoster.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Masters\NetworkMasterComponent\ResponseTranslator.cs" />
+    <Compile Include="Masters\NetworkMasterComponent\ResponseHandler.cs" />
     <Compile Include="Masters\UIMaster.cs" />
     <Compile Include="UserAgents\Actions\Action.cs" />
+    <Compile Include="UserAgents\Actions\Login.cs" />
     <Compile Include="UserAgents\Operations\Operations.cs" />
     <Compile Include="UserAgents\UserAgent.cs" />
     <Page Include="MainWindow.xaml">
@@ -112,6 +123,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,8 +134,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataEntities\NetworkEntities\api\" />
     <Folder Include="DataEntities\NetworkEntities\api_get_member\" />
-    <Folder Include="DataEntities\ShipEntities\" />
+    <Folder Include="DataEntities\NetworkEntities\api_req_member\" />
     <Folder Include="Masters\BaseMasterComponent\" />
     <Folder Include="Masters\ShipMasterComponent\" />
     <Folder Include="Masters\UIMasterComponent\" />

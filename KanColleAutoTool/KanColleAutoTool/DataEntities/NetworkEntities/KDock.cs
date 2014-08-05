@@ -6,11 +6,31 @@ using System.Threading.Tasks;
 
 namespace KanColleAutoTool.DataEntities.NetworkEntities
 {
-    public class KDock
+    public class KDock:NetworkEntity
     {   
         public KDock_ApiData Data {get; private set;}
         public string requestUri{get {return "";}}
         public NetworkRequestType Type { get { return NetworkRequestType.KDOCK; } }
+
+        public override string getRequestUri(params object[] args)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object getResponseDataObject()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool loadData(string response)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string getRequestData(UserAgents.UserAgent user)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class KDock_ApiData

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KanColleAutoTool.Masters.NetworkMasterComponent
+namespace KanColleAutoTool.DataEntities.NetworkEntities
 {
-    class ResponseTranslator
+    class Useritem
     {
-
     }
 }

@@ -8,10 +8,10 @@ namespace KanColleAutoTool.DataEntities.NetworkEntities
 {
 
     public class Ndock
-    {   
-        public NDOCK_RootObject Data {get; private set;}
-        public string requestUri{get {return "";}}
-        public NetworkRequestType Type{get {return NetworkRequestType.NDOCK;}}
+    {
+        public NDOCK_RootObject Data { get; private set; }
+        public string requestUri { get { return ""; } }
+        public NetworkRequestType Type { get { return NetworkRequestType.NDOCK; } }
     }
 
     public class NDOCK_ApiData

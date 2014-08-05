@@ -12,12 +12,17 @@ using KanColleAutoTool.UserAgents;
 
 namespace KanColleAutoTool.Masters
 {
+    delegate void netWorkResponseProcess(NetworkEntity Data);
+
     public sealed class NetworkMaster 
     {
         private static volatile NetworkMaster instance;
         private static object syncRoot = new Object();
         private HttpPoster poster;
-        private ResponseTranslator responseHandler;
+        private ResponseHandler responseHandler;
+
+        
+        private Dictionary<NetworkRequestType, netWorkResponseProcess> regedit;
 
         private NetworkMaster()
         {
@@ -40,11 +45,53 @@ namespace KanColleAutoTool.Masters
             }
         }
 
-        public static bool Post( HttpRequests _request, UserAgent _user )
+        public bool Post(NetworkRequestType request, UserAgent _user)
+        {
+            NetworkEntity packet = CreateEntity(request);
+            string responseString;
+            poster.httpPost(packet.getRequestUri(), packet.getRequestData(_user), out responseString);
+            packet.loadData(responseString);
+            if(!regedit.ContainsKey(request) || regedit[request]==null)
+            {
+                return true;
+            }
+            regedit[request](packet);
+            
+            return true;
+        }
+
+        public void Regedit_Add( NetworkRequestType request, netWorkResponseProcess handler)
+        {
+            if(!regedit.ContainsKey(request))
+            {
+                regedit.Add(request, handler);
+            }
+            else
+            {
+                regedit[request] += handler;
+            }
+        }
+
+        public void Regedit_Remove( NetworkRequestType request, netWorkResponseProcess handler)
         {
 
+            if (!regedit.ContainsKey(request))
+            {
+                return;
+            }
+            else
+            {
+                regedit[request] -= handler;
+            }
+        }
 
-            return true;
+        protected NetworkEntity CreateEntity(NetworkRequestType request)
+        {
+            throw new NotImplementedException();
+            switch(request)
+            {
+
+            }
         }
     }
 }

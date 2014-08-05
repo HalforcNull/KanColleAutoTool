@@ -3,14 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace KanColleAutoTool.DataEntities.NetworkEntities
 {
-    public class Start2
+    public class Start2 : NetworkEntity
     {
         public Start2_RootObject Data { get; private set; }
-        public string requestUri { get { return ""; } }
+        //public string requestUri { get { return ""; } }
         public NetworkRequestType Type { get { return NetworkRequestType.START2; } }
+
+        public override object getResponseDataObject()
+        {
+            return Data;
+        }
+
+        public override bool loadData(string response)
+        {
+            try
+            {
+                Data = (Start2_RootObject)JsonConvert.DeserializeObject(response);
+                return true;
+            }
+            catch (Exception e)
+            {
+                //need implement;
+                return false;
+            }
+        }
+
+        public override string getRequestData(UserAgents.UserAgent user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string getRequestUri(UserAgents.UserAgent user)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Start2_ApiMstShip
